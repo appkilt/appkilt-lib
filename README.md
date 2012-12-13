@@ -33,6 +33,11 @@ Usage
 
 ### Initializing the Library
 
+First, make sure that your app has the proper permissions.  Network access is required to upload bug reports and download updates
+
+	Add the following permissions to your AndroidManifest.xml:
+	android:name="android.permission.INTERNET"
+
 Add the following code to your Android app application class. If you don't have an Application class, 
 you can create one easily. Remember to add it to your AndroidManifest.xml.
 
@@ -42,7 +47,7 @@ you can create one easily. Remember to add it to your AndroidManifest.xml.
 		public void onCreate() {
 			super.onCreate();
 		
-			AppKilt.init(this, "c8099b38-5c13-4505-87cd-698ccece9a1a");
+			AppKilt.init(this, "[Your Company ID]");
 		}
 	}
 
