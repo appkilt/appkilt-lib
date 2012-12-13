@@ -8,6 +8,8 @@
   <property name="build" location="build"/>
   <property name="dist"  location="dist"/>
 
+  <property file="build.properties" />
+
 	<path id="class.path">
 
 	  <fileset  dir="${android_sdk}">
@@ -37,7 +39,8 @@
     <mkdir dir="${dist}"/>
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/appkilt-${DSTAMP}.jar" basedir="${build}"/>
+    <jar jarfile="${dist}/appkiltlib-${appkilt-lib-version}-${DSTAMP}.jar" basedir="${build}"/>
+    <copy file="${dist}/appkiltlib-${appkilt-lib-version}-${DSTAMP}.jar" tofile="${dist}/appkiltlib-latest.jar"/>
   </target>
 
   <target name="clean"
