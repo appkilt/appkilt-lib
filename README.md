@@ -36,11 +36,12 @@ Usage
 First, make sure that your app has the proper permissions.  Network access is required to upload bug reports and download updates
 
 	Add the following permissions to your AndroidManifest.xml:
-	android:name="android.permission.INTERNET"
+	`android:name="android.permission.INTERNET"`
 
 Add the following code to your Android app application class. If you don't have an Application class, 
 you can create one easily. Remember to add it to your AndroidManifest.xml.
 
+``` java
 	public class MyApplication extends Application {
 
 		@Override
@@ -50,12 +51,14 @@ you can create one easily. Remember to add it to your AndroidManifest.xml.
 			AppKilt.init(this, "[Your Company ID]");
 		}
 	}
+```
 
 ### Enabling Automatic Updates
 
 Add the following code to each activity where you want users to be given the option to upgrade. 
 Typically this will just be the main activity for your application.
 
+``` java
 	@Override
 	protected void onPause() { 
 		super.onPause();
@@ -68,6 +71,7 @@ Typically this will just be the main activity for your application.
 		super.onResume();
 	
 		AppKilt.onUpdateableActivityResume(this);
+```
 
 Additional Help
 -----------------
